@@ -21,7 +21,7 @@ export default function Dashboard(props) {
             </div>
           </div>
           
-          <RecipeList />
+          <RecipeList recipes={props.recipes}/>
 
         </Authenticated>
     );

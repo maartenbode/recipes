@@ -2,14 +2,21 @@ import React from 'react';
 
 import RecipeItem from './RecipeItem'
 
-const RecipeList = () => {
+const RecipeList = ({recipes}) => {
   return (
     <div className='py-4 px-10'>
-      <RecipeItem 
-        title="Sweet chili-tofu met rijst en cashewnoten"
-        course="Main"
-        duration="20"
-      />
+      <div>
+        {recipes.map((recipe) => {
+          return(
+            <RecipeItem
+              key={recipe.uuid} 
+              title={recipe.title}
+              course="Main"
+              duration={recipe.duration_minutes}
+            />
+          )
+        })}
+      </div>
     </div>
   );
 }
